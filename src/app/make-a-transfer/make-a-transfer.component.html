@@ -1,0 +1,30 @@
+<div class="box">
+  <div class="heading">
+    <img src=""/>
+    <div class="col-12">Make a Transfer</div>
+  </div>  
+  <form [formGroup] ="transferForm" (ngSubmit)="onSubmit()">
+    <div class="form-group row">
+      <label for="from-account" class="col-12            col-form-label">FROM ACCOUNT</label>
+      <div class="col-12">
+        <input class="form-control" type="text" id="from-account"  formControlName="fromAccount">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="to-account" class="form-label col-12">TO ACCOUNT</label>
+    <div class="col-12">
+      <input class="form-control col-12" type="text" id="to-account" formControlName="toAccount">
+    </div>
+  </div>
+  <div class="form-group row">
+      <label for="amount" class="col-12         col-form-label">AMOUNT</label>
+      <div class="col-12">
+        <input class="form-control col-12" type="text" id="amount" formControlName="amount">
+      </div>
+  </div>
+  <div class="form-group row">
+  <button class="margin-left-15 btn btn-primary" [disabled]="!transferForm.valid">SUBMIT</button>
+  </div>
+  </form>
+
+</div>
