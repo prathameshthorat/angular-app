@@ -1,11 +1,11 @@
 <div id="recentHistoryContainer">
   <nav class="navbar row">
-      <div class="col-md-6"><span>Search :</span><span><input class="search-field" type="text" name="search" [(ngModel)]="filter"></span></div>
+      <div class="col-md-6"><span>Search :</span><span><input class="search-field" type="text" name="search"></span></div>
     </nav>
-       <div class="row table-style" *ngFor="let transaction of recentHistory | async | filter:filter; let i = index">
+       <div class="row table-style" *ngFor="let transaction of recentHistory | async ; let i = index">
           <div class="col-md-2">{{i}}</div>
           <div class="col-md-4">{{transaction.toAccount}}</div>
           <div class="col-md-4">{{transaction.amount}}</div>
        </div>
     </div>
-<div>  
+<div>
