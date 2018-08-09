@@ -19,12 +19,10 @@
                 </button>
             </div>
         </nav>
-        <div *ngIf="recentHistory | async; else nodata">
-            <div class="row table-style" *ngFor="let transaction of recentHistory | async | filter:transactionFilter">
+        <div class="row table-style" *ngFor="let transaction of recentHistory | async | filter:transactionFilter">
                 <div class="col-md-4 border-right">{{transaction.transferedDate | date }}</div>
                 <div class="col-md-4 border-right">{{transaction.toAccount}}</div>
                 <div class="col-md-4">{{transaction.amount}}</div>
             </div>
         </div>
-        <ng-template #nodata>No Data</ng-template>
 </div>
