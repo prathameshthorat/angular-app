@@ -11,6 +11,7 @@ import { TransferDetails, MakeATransferService } from '../services/make-a-transf
 export class TransactionHistoryComponent implements OnInit{
 
   recentHistory : Observable<TransferDetails[]>;
+  transactionFilter = "";
   
   constructor( private transferService : MakeATransferService)  {
 
