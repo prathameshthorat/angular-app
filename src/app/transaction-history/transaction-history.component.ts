@@ -6,7 +6,7 @@ import { TransferDetails, MakeATransferService } from '../services/make-a-transf
 @Component({
   selector: 'transaction-history',
   templateUrl: './transaction-history.component.html',
-  styleUrls: ['./transaction-history.component.scss']
+  styleUrls: ['./transaction-history.component.scss'],
 })
 export class TransactionHistoryComponent implements OnInit{
 

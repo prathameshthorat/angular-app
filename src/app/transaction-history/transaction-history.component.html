@@ -1,11 +1,30 @@
-<div id="recentHistoryContainer">
-  <nav class="navbar row">
-      <div class="col-md-6"><span>Search :</span><span><input class="search-field" type="text" name="search"></span></div>
-    </nav>
-       <div class="row table-style" *ngFor="let transaction of recentHistory | async ; let i = index">
-          <div class="col-md-2">{{i}}</div>
-          <div class="col-md-4">{{transaction.toAccount}}</div>
-          <div class="col-md-4">{{transaction.amount}}</div>
-       </div>
+<div id="recentHistoryContainer" class="recent-history-box">
+    <div class="heading">
+        <img src=""/>
+        <div class="">Transaction History</div>
     </div>
-<div>
+    <div>
+        <nav class="navbar row">
+            <div class="col-md-6"><span>Search :</span>
+                <span><input class="search-field" type="text" name="search" [(ngModel)]="transactionFilter"></span>
+            </div>
+            <div calss="col-md-6">
+                <button type="button" class="btn filter-button" onclick="switchDateIcon()">
+                    <span id="sortDateDescIcon" class="pull-left" style="display: inline-block;"><i class="fa fa-sort-amount-desc"></i>Date</span>
+                    <span id="sortDateAscIcon" class="pull-left" style="display:none;"> <i class="fa fa-sort-amount-asc"></i> Amount</span>
+                </button>
+                <button type="button" class="btn filter-button" onclick="switchAmountIcon()">
+                    <span id="sortDescIcon" class="pull-left" style="display: inline-block;"><i class="fa fa-sort-amount-desc"></i>Amount</span>
+                    <span id="sortAscIcon" class="pull-left" style="display:none;"> <i class="fa fa-sort-amount-asc"></i> Amount</span>
+                </button>
+            </div>
+        </nav>
+        <div *ngIf="recentHistory | async; else nodata">
+            <div class="row table-style" *ngFor="let transaction of recentHistory | async | filter:transactionFilter">
+                <div class="col-md-4 border-right">{{transaction.transferedDate | date }}</div>
+                <div class="col-md-4 border-right">{{transaction.toAccount}}</div>
+                <div class="col-md-4">{{transaction.amount}}</div>
+            </div>
+        </div>
+        <ng-template #nodata></ng-template>
+</div>

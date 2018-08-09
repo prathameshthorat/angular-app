@@ -5,6 +5,7 @@ export interface TransferDetails {
   fromAccount : string;
   toAccount : string;
   amount : number;
+  transferedDate : Date;
 }
 
 @Injectable()

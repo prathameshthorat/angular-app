@@ -1,25 +1,40 @@
-<div class="box">
-  <div class="heading">
+<div id="makeATransferContainer" class="box row">
+  <div class="col-sm-12 heading">
     <img src=""/>
-    <div class="col-12">Make a Transfer</div>
+    <div class="">Make a Transfer</div>
   </div>  
-  <form [formGroup] ="transferForm" (ngSubmit)="onSubmit()">
+  <form class="col-sm-12" [formGroup] ="transferForm" (ngSubmit)="onSubmit()">
     <div class="form-group row">
-      <label for="from-account" class="col-12            col-form-label">FROM ACCOUNT</label>
-      <div class="col-12">
+      <label for="from-account" class="col-sm-12 col-form-label">FROM ACCOUNT</label>
+      <div class="col-sm-12">
         <input class="form-control" type="text" id="from-account"  formControlName="fromAccount">
+        <div *ngIf="transferForm.get('fromAccount').invalid && (transferForm.get('fromAccount').dirty || transferForm.get('fromAccount').touched)"
+        role="alert" class="col-form-label">
+            <span *ngIf="transferForm.get('fromAccount').errors.required" class="alert-danger">Account Number is required.</span>
+            <span *ngIf="transferForm.get('fromAccount').errors?.pattern" class="alert-danger">Please enter valid Account Number</span>
+        </div>
       </div>
     </div>
     <div class="form-group row">
-      <label for="to-account" class="form-label col-12">TO ACCOUNT</label>
-    <div class="col-12">
-      <input class="form-control col-12" type="text" id="to-account" formControlName="toAccount">
+      <label for="to-account" class="form-label col-sm-12">TO ACCOUNT</label>
+    <div class="col-sm-12">
+      <input class="form-control col-sm-12" type="text" id="to-account" formControlName="toAccount">
+      <div *ngIf="transferForm.get('toAccount').invalid && (transferForm.get('toAccount').dirty || transferForm.get('toAccount').touched)"
+        role="alert" class="col-form-label">
+            <span *ngIf="transferForm.get('toAccount').errors.required" class="alert-danger">Account Number is required.</span>
+            <span *ngIf="transferForm.get('toAccount').errors?.pattern" class="alert-danger">Please enter valid Account Number</span>
+        </div>
     </div>
   </div>
   <div class="form-group row">
-      <label for="amount" class="col-12         col-form-label">AMOUNT</label>
-      <div class="col-12">
-        <input class="form-control col-12" type="text" id="amount" formControlName="amount">
+      <label for="amount" class="col-sm-12 col-form-label">AMOUNT</label>
+      <div class="col-sm-12">
+        <input class="form-control col-sm-12" type="text" id="amount" formControlName="amount">
+        <div *ngIf="transferForm.get('amount').invalid && (transferForm.get('amount').dirty || transferForm.get('amount').touched)"
+        role="alert" class="col-form-label">
+            <span *ngIf="transferForm.get('amount').errors.required" class="alert-danger">Amount is required.</span>
+            <span *ngIf="transferForm.get('amount').errors?.pattern" class="alert-danger">Please enter valid Amount</span>
+        </div>
       </div>
   </div>
   <div class="form-group row">
