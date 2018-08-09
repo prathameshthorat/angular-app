@@ -18,7 +18,15 @@ export class TransactionHistoryComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.recentHistory = this.transferService.transferDetails
-    //console.log(this.recentHistory);
+    this.recentHistory = this.transferService.transferDetails;
   }
+
+  switchDateIcon() {
+
+  }
+
+  switchAmountIcon() {
+
+  }
+
 }
