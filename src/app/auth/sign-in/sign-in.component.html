@@ -1,0 +1,17 @@
+<auth-header></auth-header>
+<div id="logInForm" class="card col-md-8 col-xs-6">
+    <form #logInForm="ngForm" class="card-body" (ngSubmit)="onSubmit(logInForm)">
+      <div class="form-group">
+        <label for="userId">Username</label>
+        <input id="userId" type="text" class="form-control" name="userId" ngModel required/>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" class="form-control" name="userPassword" ngModel required/>
+      </div>
+      <div>
+        <button class="btn btn-lg btn-primary text-uppercase d-none d-sm-block" [disabled]="logInForm.form.invalid">Log In</button> 
+        <button class="btn btn-lg btn-primary text-uppercase d-block d-sm-none btn-block" [disabled]="logInForm.form.invalid">Log In</button>
+      </div>
+    </form>   
+</div>
