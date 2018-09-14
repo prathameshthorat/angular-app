@@ -15,7 +15,5 @@ export class AppComponent implements OnInit {
         authDomain: isDevMode() ? environment.FireBase_Auth_Domain : process.env.FireBase_Auth_Domain
       });
     }
-    
-  }
 
 }
