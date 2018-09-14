@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, isDevMode } from '@angular/core';
 import * as firebase from 'firebase';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,12 @@ import * as firebase from 'firebase';
 export class AppComponent implements OnInit {
 
   ngOnInit(){
-    firebase.initializeApp({
-      apiKey: "AIzaSyCjdiCg7ozKhyLZqSh8zuJe58m6Awcn5Ig",
-      authDomain: "mybankapp-1f03c.firebaseapp.com"
-    });
+      firebase.initializeApp({
+        apiKey: isDevMode() ? environment.FireBase_API_KEY : process.env.FireBase_API_KEY,
+        authDomain: isDevMode() ? environment.FireBase_Auth_Domain : process.env.FireBase_Auth_Domain
+      });
+    }
+    
   }
 
 }
