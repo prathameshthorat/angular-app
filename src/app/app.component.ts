@@ -11,8 +11,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
       firebase.initializeApp({
-        apiKey: isDevMode() ? environment.FireBase_API_KEY : process.env.FireBase_API_KEY,
-        authDomain: isDevMode() ? environment.FireBase_Auth_Domain : process.env.FireBase_Auth_Domain
+        //apiKey: isDevMode() ? environment.FireBase_API_KEY : process.env.FireBase_API_KEY,
+        //authDomain: isDevMode() ? environment.FireBase_Auth_Domain : process.env.FireBase_Auth_Domain
       });
     }
 
