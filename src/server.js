@@ -7,4 +7,5 @@ app.use(express.static(__dirname + '/dist'));
 // Heroku port
 app.listen(process.env.PORT || 8080, function(){
     console.log(process.env.PORT);
+    console.log(process.env.FireBase_Auth_Domain);
 });
