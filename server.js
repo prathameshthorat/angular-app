@@ -32,7 +32,7 @@ app.get('/*', function(req, res) {
 // Start the app by listening on the default
 // Heroku port
 app.listen(PORT, function(){
-  console.log(process)
+  console.log(process.env);
   console.log('here '+PORT);
 });
 
