@@ -9,7 +9,7 @@ export class EnvironmentVariablesService {
 
   getEnvironmentVariables() {
     console.log(environment.server_api);
-    return this.http.get(environment.server_api+'/env-vars');
+    return this.http.get(environment.server_api+'env-vars');
   }
 
 }
