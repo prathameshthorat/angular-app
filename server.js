@@ -54,10 +54,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/env-vars', function(req, res, next){
-  res.json( { 'fireBaseKey': process.env.FireBase_API_KEY,
+    res.json( { 'fireBaseKey': process.env.FireBase_API_KEY,
               'fireBase_Auth_Domain': process.env.FireBase_Auth_Domain
-});
-  next();
+            });
+    next();
 })
 
 // Start the app by listening on the default
