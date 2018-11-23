@@ -1,10 +1,11 @@
 import { writeFile } from 'fs';
 import { argv } from 'yargs';
+import * as dotenv from 'dotenv';
 
 // This is good for local dev environments, when it's better to
 // store a projects environment variables in a .gitignore'd file
-require('dotenv').config();
-
+//require('dotenv').config();
+dotenv.config();
 // Would be passed to script like this:
 // `ts-node set-env.ts --environment=dev`
 // we get it from yargs's argv object
