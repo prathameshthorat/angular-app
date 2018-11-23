@@ -12,7 +12,8 @@ import { AuthService } from './auth.service';
     AuthRoutingModule
   ],
   declarations: [AuthComponent, HeaderComponent, SignInComponent],
-  providers : [AuthService]
+  providers : [AuthService],
+  bootstrap: [ AuthComponent ] 
 })
 
 export class AuthModule {
